@@ -2,18 +2,18 @@
 
 ## 🎯 Lo Esencial en 30 segundos
 
-**Tu Supabase:**
+**Tu Supabase (Connection Pooler):**
 ```
-postgresql://postgres:supabase.com@db.ohofjvljqhyysnyzemuo.supabase.co:5432/postgres
+postgresql://postgres.ohofjvljqhyysnyzemuo:supabase.com@aws-0-us-east-2.pooler.supabase.com:6543/postgres
 ```
 
 **Tu Laravel .env:**
 ```env
 DB_CONNECTION=pgsql
-DB_HOST=db.ohofjvljqhyysnyzemuo.supabase.co
-DB_PORT=5432
+DB_HOST=aws-0-us-east-2.pooler.supabase.com
+DB_PORT=6543
 DB_DATABASE=postgres
-DB_USERNAME=postgres
+DB_USERNAME=postgres.ohofjvljqhyysnyzemuo
 DB_PASSWORD=supabase.com
 ```
 
@@ -89,13 +89,19 @@ php artisan serve
           │
 ┌─────────▼──────────────────────────────┐
 │  Supabase Cloud (AWS)                  │
-│  db.ohofjvljqhyysnyzemuo.supabase.co   │
+│  aws-0-us-east-2.pooler.supabase.com   │
 │  ┌──────────────────────────────────┐  │
-│  │  PostgreSQL                      │  │
-│  │  ├─ users                        │  │
-│  │  ├─ students                     │  │
-│  │  ├─ grades                       │  │
-│  │  └─ ... (más tablas)             │  │
+│  │  Connection Pooler (Puerto 6543)  │  │
+│  │  ├─ Gestiona conexiones          │  │
+│  │  └─ Mejora rendimiento            │  │
+│  └────────────┬─────────────────────┘  │
+│               │                        │
+│  ┌────────────▼──────────────────────┐ │
+│  │  PostgreSQL                      │ │
+│  │  ├─ users                        │ │
+│  │  ├─ students                     │ │
+│  │  ├─ grades                       │ │
+│  │  └─ ... (más tablas)             │ │
 │  └──────────────────────────────────┘  │
 └──────────────────────────────────────────┘
 ```
@@ -165,8 +171,8 @@ sudo systemctl restart apache2
 
 ### Error: "SQLSTATE[08006]"
 ```bash
-# Verifica que el host sea correcto:
-# db.ohofjvljqhyysnyzemuo.supabase.co ← Exacto así
+# Verifica que el host y puerto sean correctos:
+# aws-0-us-east-2.pooler.supabase.com:6543 ← Exacto así (Connection Pooler)
 ```
 
 ### Error: "SQLSTATE[28P01]"

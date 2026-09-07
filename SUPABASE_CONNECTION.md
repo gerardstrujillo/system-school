@@ -67,12 +67,12 @@ DB_CONNECTION=sqlite
 # DB_USERNAME=root
 # DB_PASSWORD=
 
-# A esto:
+# A esto (usando Connection Pooler):
 DB_CONNECTION=pgsql
-DB_HOST=db.ohofjvljqhyysnyzemuo.supabase.co
-DB_PORT=5432
+DB_HOST=aws-0-us-east-2.pooler.supabase.com
+DB_PORT=6543
 DB_DATABASE=postgres
-DB_USERNAME=postgres
+DB_USERNAME=postgres.ohofjvljqhyysnyzemuo
 DB_PASSWORD=supabase.com
 ```
 
@@ -193,8 +193,10 @@ Tu Aplicación Laravel
         ↓
    PDO extension de PHP
         ↓
+   Connection Pooler de Supabase
+   (aws-0-us-east-2.pooler.supabase.com:6543)
+        ↓
    PostgreSQL en Supabase
-   (db.ohofjvljqhyysnyzemuo.supabase.co:5432)
 ```
 
 ---
