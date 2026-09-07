@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->boolean('is_admin')->comment('0:user, 1:admin,2:profesor');
             $table->boolean('force_change_password')->default(false);
-            $table->integer('id_grado')->nullable()->index('id_grado');
+            $table->integer('id_grado')->nullable();
             $table->timestamp('created_at')->useCurrent();
         });
     }

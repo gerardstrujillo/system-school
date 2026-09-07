@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('telefono', 15);
             $table->string('direccion', 150);
             $table->string('ocupacion', 100);
-            $table->integer('id_estudiante')->index('id_estudiante');
+            $table->integer('id_estudiante');
         });
     }
 

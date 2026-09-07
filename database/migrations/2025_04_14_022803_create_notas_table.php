@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('notas', function (Blueprint $table) {
             $table->integer('id_nota', true);
             $table->integer('id_estudiante');
-            $table->integer('id_materia')->index('id_materia');
-            $table->integer('id_periodo')->index('id_periodo');
+            $table->integer('id_materia');
+            $table->integer('id_periodo');
             $table->decimal('nota', 4)->nullable();
             $table->string('observaciones')->nullable();
             $table->timestamp('fecha_registro')->nullable()->useCurrent();

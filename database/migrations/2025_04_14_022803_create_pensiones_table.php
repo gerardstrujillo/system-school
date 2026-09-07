@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pensiones', function (Blueprint $table) {
             $table->integer('id_pension', true);
-            $table->integer('id_estudiante')->index('id_estudiante');
+            $table->integer('id_estudiante');
             $table->string('estado_pago');
             $table->timestamp('created_at')->useCurrent();
         });

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('materias_dimensiones', function (Blueprint $table) {
             $table->integer('id_materia_dim', true);
-            $table->integer('id_grado')->index('id_grado');
+            $table->integer('id_grado');
             $table->string('nombre_dimension');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrentOnUpdate()->useCurrent();

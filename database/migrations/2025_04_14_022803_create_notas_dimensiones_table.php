@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('notas_dimensiones', function (Blueprint $table) {
             $table->integer('id', true);
-            $table->integer('id_estudiante')->index('id_estudiante');
-            $table->integer('id_materia_dim')->index('id_materia_dim');
-            $table->integer('id_periodo')->index('id_periodo');
+            $table->integer('id_estudiante');
+            $table->integer('id_materia_dim');
+            $table->integer('id_periodo');
             $table->enum('desempeno', ['Bajo', 'Básico', 'Alto', 'Superior'])->nullable();
             $table->integer('fallas')->default(0);
             $table->json('capacidades')->nullable();

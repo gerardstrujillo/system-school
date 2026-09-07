@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('capacidadesdimensiones', function (Blueprint $table) {
             $table->integer('id_capacidad', true);
-            $table->integer('id_materia_dim')->index('id_materia_dim');
+            $table->integer('id_materia_dim');
             $table->string('nombre_capacidad');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrentOnUpdate()->useCurrent();

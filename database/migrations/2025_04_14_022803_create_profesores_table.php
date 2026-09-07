@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique('email');
             $table->string('password');
-            $table->integer('id_grado')->index('id_grado');
+            $table->integer('id_grado');
             $table->timestamp('created_at')->useCurrent();
         });
     }

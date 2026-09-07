@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('materias', function (Blueprint $table) {
             $table->integer('id_materia', true);
             $table->string('nombre_materia', 100);
-            $table->integer('id_grado')->index('id_grado');
+            $table->integer('id_grado');
             $table->boolean('es_submateria')->nullable()->default(false);
-            $table->integer('id_materia_padre')->nullable()->index('id_materia_padre');
+            $table->integer('id_materia_padre')->nullable();
             $table->decimal('porcentaje', 5)->nullable()->default(100);
         });
     }

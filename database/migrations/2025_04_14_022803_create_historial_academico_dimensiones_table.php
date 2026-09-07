@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('historial_academico_dimensiones', function (Blueprint $table) {
             $table->integer('id', true);
-            $table->integer('id_estudiante')->index('id_estudiante');
-            $table->integer('id_grado')->index('id_grado');
+            $table->integer('id_estudiante');
+            $table->integer('id_grado');
             $table->integer('anio');
             $table->text('dimensiones_json');
             $table->timestamp('created_at')->useCurrent();

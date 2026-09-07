@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('fotos_publicaciones', function (Blueprint $table) {
             $table->integer('id_foto', true);
-            $table->integer('id_publicacion')->nullable()->index('id_publicacion');
+            $table->integer('id_publicacion')->nullable();
             $table->string('ruta_foto')->nullable();
         });
     }

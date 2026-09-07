@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('documentos_estudiantes', function (Blueprint $table) {
             $table->integer('id_documento', true);
-            $table->integer('id_estudiante')->index('id_estudiante');
+            $table->integer('id_estudiante');
             $table->string('fotocopia_registro_civil')->nullable();
             $table->string('fotocopia_carnet_vacunas')->nullable();
             $table->string('fotocopia_carnet_covid')->nullable();
