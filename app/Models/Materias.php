@@ -13,6 +13,10 @@ class Materias extends Model
     protected $primaryKey = 'id_materia';
     public $timestamps = false;
 
+    protected $casts = [
+        'es_submateria' => 'boolean',
+    ];
+
     protected $fillable = [
         'nombre_materia',
         'id_grado',

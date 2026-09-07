@@ -13,6 +13,7 @@ class Administrador extends Authenticatable
     public $primaryKey = 'id_usuario';
     public $timestamps = false;
     protected $casts = [
+        'is_admin' => 'boolean',
         'force_change_password' => 'boolean',
     ];
     

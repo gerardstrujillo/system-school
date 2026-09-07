@@ -127,7 +127,7 @@ class DashboardAdminController extends Controller
            ->select(
                'evidencia_planilla.*',
                'administradores.name as docente_nombre',
-               'gradosacademicos.grados as grado_nombre',
+               'gradosacademicos.grado as grado_nombre',
                // Usamos COALESCE: 
                DB::raw("COALESCE(materias.nombre_materia, materias_dimensiones.nombre_dimension) as nombre_final")
            );
