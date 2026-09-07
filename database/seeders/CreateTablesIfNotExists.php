@@ -184,7 +184,7 @@ class CreateTablesIfNotExists extends Seeder
                     name VARCHAR(255),
                     email VARCHAR(255) UNIQUE,
                     password VARCHAR(255),
-                    is_admin BOOLEAN COMMENT 'Solo para compatibilidad',
+                    is_admin BOOLEAN DEFAULT false,
                     force_change_password BOOLEAN DEFAULT false,
                     id_grado INTEGER,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
