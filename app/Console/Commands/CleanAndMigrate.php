@@ -23,7 +23,22 @@ class CleanAndMigrate extends Command
         }
 
         $this->info('📦 Ejecutando migraciones...');
-        $this->call('migrate', ['--force' => true]);
+
+        try {
+            // Deshabilitar foreign keys temporalmente
+            DB::statement('SET session_replication_role = replica');
+
+            $this->call('migrate', ['--force' => true]);
+
+            // Reabilitar foreign keys
+            DB::statement('SET session_replication_role = default');
+
+            $this->info('✅ Migraciones completadas');
+        } catch (\Exception $e) {
+            DB::statement('SET session_replication_role = default');
+            $this->error('❌ Error en migraciones: ' . $e->getMessage());
+            throw $e;
+        }
 
         $this->info('🌱 Ejecutando seeders...');
         $this->call('db:seed', ['--force' => true]);
