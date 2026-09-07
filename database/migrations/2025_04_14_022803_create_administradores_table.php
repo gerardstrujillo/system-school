@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('administradores', function (Blueprint $table) {
             $table->bigInteger('id_usuario', true);
             $table->string('name');
-            $table->string('email')->unique('email');
+            $table->string('email')->unique();
             $table->string('password');
             $table->boolean('is_admin')->comment('0:user, 1:admin,2:profesor');
             $table->boolean('force_change_password')->default(false);

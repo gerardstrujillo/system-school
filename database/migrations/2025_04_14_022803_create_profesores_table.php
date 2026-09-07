@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('profesores', function (Blueprint $table) {
             $table->bigInteger('id_usuario', true);
             $table->string('name');
-            $table->string('email')->unique('email');
+            $table->string('email')->unique();
             $table->string('password');
             $table->integer('id_grado');
             $table->timestamp('created_at')->useCurrent();
