@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('evidencia_planilla', function (Blueprint $table) {
             $table->integer('id', true);
-            $table->bigInteger('id_docente')->index('id_docente');
-            $table->integer('id_grado')->index('id_grado');
-            $table->integer('id_periodo')->index('id_periodo');
-            $table->integer('id_materia')->nullable()->index('id_materia');
-            $table->integer('id_materia_dim')->nullable()->index('fk_evidplan_dim');
+            $table->bigInteger('id_docente');
+            $table->integer('id_grado');
+            $table->integer('id_periodo');
+            $table->integer('id_materia')->nullable();
+            $table->integer('id_materia_dim')->nullable();
             $table->string('file_path');
             $table->string('file_type', 50)->comment('pdf o image');
             $table->timestamp('created_at')->useCurrent();
